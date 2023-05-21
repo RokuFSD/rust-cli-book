@@ -1,14 +1,14 @@
 use clap::Parser;
-use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
+use std::io::BufReader;
 use std::io::{self, Write};
-use std::io::{BufReader, Lines};
 use std::path::PathBuf;
 
 #[derive(Parser)]
 struct Cli {
     /// The pattern to look for
+    #[arg(short, long)]
     pattern: String,
     /// The path to the file to read
     path: PathBuf,
